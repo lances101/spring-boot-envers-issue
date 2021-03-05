@@ -19,7 +19,7 @@ public class DemoModel {
     @EmbeddedId
     private DemoCompositeKey id;
 
-    @ElementCollection
+    @ElementCollection(fetch = FetchType.EAGER)
     @CollectionTable(name="demo_model_collection", joinColumns = {
             @JoinColumn(name="demo_one", referencedColumnName = "one"),
             @JoinColumn(name="demo_two", referencedColumnName = "two")
